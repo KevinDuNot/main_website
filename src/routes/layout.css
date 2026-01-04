@@ -5,18 +5,109 @@
 @import '@fontsource/space-mono/400.css';
 @import '@fontsource/space-mono/700.css';
 
-@import 'tailwindcss';
-@plugin '@tailwindcss/forms';
-@plugin '@tailwindcss/typography';
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+
+/* These are all from here: https://bits-ui.com/docs/components/navigation-menu */
+
+:root {
+    --background: hsl(0 0% 100%);
+    --foreground: hsl(0 0% 9%);
+
+    --muted: hsl(240 5% 96%);
+    --muted-foreground: hsla(0 0% 9% / 0.4);
+
+    --border: hsl(240 6% 10%);
+    --border-card: hsla(240 6% 10% / 0.1);
+    --border-input: hsla(240 6% 10% / 0.17);
+
+    --accent: hsl(204 94% 94%);
+    --accent-foreground: hsl(204 80% 16%);
+
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(0 0% 9%);
+
+    --shadow-mini: 0px 1px 0px 1px rgba(0, 0, 0, 0.04);
+    --shadow-popover: 0px 7px 12px 3px rgba(0, 0, 0, 0.1);
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-border: var(--border);
+    --color-border-card: var(--border-card);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --shadow-mini: var(--shadow-mini);
+    --shadow-popover: var(--shadow-popover);
+
+    --animate-scale-in: scale-in 0.2s ease;
+    --animate-scale-out: scale-out 0.15s ease;
+    --animate-enter-from-left: enter-from-left 0.2s ease;
+    --animate-enter-from-right: enter-from-right 0.2s ease;
+    --animate-exit-to-left: exit-to-left 0.2s ease;
+    --animate-exit-to-right: exit-to-right 0.2s ease;
+    --animate-fade-in: fade-in 0.2s ease;
+    --animate-fade-out: fade-out 0.15s ease;
+
+    @keyframes scale-in {
+        from { opacity: 0; transform: rotateX(-10deg) scale(0.9); }
+        to { opacity: 1; transform: rotateX(0deg) scale(1); }
+    }
+    @keyframes scale-out {
+        from { opacity: 1; transform: rotateX(0deg) scale(1); }
+        to { opacity: 0; transform: rotateX(-10deg) scale(0.95); }
+    }
+    @keyframes enter-from-right {
+        from { opacity: 0; transform: translateX(200px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes enter-from-left {
+        from { opacity: 0; transform: translateX(-200px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes exit-to-right {
+        from { opacity: 1; transform: translateX(0); }
+        to { opacity: 0; transform: translateX(200px); }
+    }
+    @keyframes exit-to-left {
+        from { opacity: 1; transform: translateX(0); }
+        to { opacity: 0; transform: translateX(-200px); }
+    }
+    @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes fade-out {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+}
 
 @layer base {
     body {
         font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+        background-color: var(--background);
+        color: var(--foreground);
+    }
+
+    *, ::after, ::before {
+        border-color: var(--border-card);
     }
 }
 
 @layer utilities {
     .font-mono {
-        font-family: 'Space Mono', ui-monospace, monospace
+        font-family: 'Space Mono', ui-monospace, monospace;
+    }
+    .font-instrument-sans {
+        font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
     }
 }
