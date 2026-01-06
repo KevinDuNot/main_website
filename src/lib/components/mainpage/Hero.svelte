@@ -26,7 +26,7 @@
     }
 </script>
 
-<div class="relative flex w-full md:h-[85vh] h-[100vh] items-center overflow-hidden text-white justify-center">
+<div class="relative flex w-full md:h-[95vh] h-[100vh] items-center overflow-hidden text-white justify-center">
 
     <img
             src={Hero_Background}
