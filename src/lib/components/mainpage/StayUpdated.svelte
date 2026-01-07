@@ -42,9 +42,31 @@
                 class="absolute inset-0 h-full w-full object-cover pointer-events-none select-none -z-10 brightness-110"
         />
 
+        <div class="hidden lg:flex absolute top-3 right-0 pointer-events-none select-none z-10 flex-col items-end">
+            <svg class="absolute inset-0 w-[240px] h-full -translate-x-20 -translate-y-8">
+                <defs>
+                    <pattern id="x-pattern-two" width="60" height="60" patternUnits="userSpaceOnUse">
+                        <path d="M15 15L25 25M25 15L15 25" stroke="#5e508a" stroke-width="1.2" opacity="0.25"/>
+
+                        <path d="M45 45L55 55M55 45L45 55" stroke="#5e508a" stroke-width="1.2" opacity="0.25"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#x-pattern-two)" />
+            </svg>
+
+            <p class="font-mono text-[20px] text-[#5e508a] opacity-60 px-2 translate-y-16 z-10 relative">
+                10001010101110101101010101
+            </p>
+
+            <div
+                    class="w-70 h-18 opacity-100 z-5"
+                    style="background: linear-gradient(to right, #a5a8d9, #8988ca);"
+            ></div>
+        </div>
+
         <div class="flex flex-col md:flex-row w-full h-full">
 
-            <div class="flex-1 flex flex-col justify-center px-8 md:px-20 xl:pl-30 gap-5">
+            <div class="flex-1 flex flex-col justify-center px-8 md:px-20 xl:pl-30 gap-5 md:mt-20 lg:ml-10">
 
                 <div class="hidden md:block absolute -top-10 -left-10 pointer-events-none select-none z-0 overflow-visible"
                      style="transform: rotate(-15deg); width: 240px; height: 150px;">
@@ -85,7 +107,7 @@
                     </p>
                 </div>
 
-                <h2 class="text-5xl md:text-7xl font-bold tracking-tight pt-5">
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight pt-5">
                     Stay Updated
                 </h2>
 
@@ -126,7 +148,7 @@
                 </div>
             </div>
 
-            <div class="flex-1 flex items-center justify-center perspective-[750px] xl:pr-30 sm:mb-0 mb-5">
+            <div class="flex-1 flex items-center justify-center perspective-[750px] xl:pr-36 md:mr-10 sm:mb-0 mb-5 md:mt-12">
                 <div
                         class="brightness-105 relative w-[80%] sm:w-[60%] md:w-[90%] max-w-[500px] aspect-square transition-transform duration-1000 ease-out will-change-transform"
                         role="presentation"
