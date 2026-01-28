@@ -87,7 +87,7 @@
                 </h2>
 
 
-                <p class="font-mono lg:text-[15px] text-[14px] leading-relaxed mb-6 text-white">
+                <p class="font-mono lg:text-[16px] text-[14px] leading-relaxed mb-6 text-white">
                     If you're new to all this, check out our beginner
                     guides CP101 for competitive programming, and
                     CM101 for competitive maths.

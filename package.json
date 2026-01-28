@@ -41,6 +41,7 @@
 	"dependencies": {
 		"@fontsource/instrument-sans": "^5.2.8",
 		"@fontsource/space-mono": "^5.2.9",
+		"axios": "^1.13.4",
 		"bits-ui": "^2.14.4",
 		"clsx": "^2.1.1",
 		"phosphor-svelte": "^3.0.1",

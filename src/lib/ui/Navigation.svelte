@@ -239,7 +239,7 @@
                 transition:slide={{ duration: 200 }}
                 class="absolute top-full left-0 w-full bg-[#f8f8f8] border-b border-gray-200 shadow-xl flex flex-col p-6 gap-2 md:hidden z-40 max-h-[85vh] overflow-y-auto"
         >
-            <a href="/" class="text-base font-semibold py-2 hover:text-accent-foreground">
+            <a href="/" class="text-base font-semibold py-2 hover:text-accent-foreground" onclick={() => mobileMenuOpen = false}>
                 Home
             </a>
 
@@ -249,9 +249,9 @@
                     <CaretDown class="transition-transform duration-200 group-open:rotate-180" size={16}/>
                 </summary>
                 <div class="pl-4 flex flex-col gap-2 mt-1 border-l-2 border-gray-200 ml-1">
-                    <a href="/blog" class="py-1 text-sm text-muted-foreground hover:text-foreground">Blog</a>
-                    <a href="/cp101" class="py-1 text-sm text-muted-foreground hover:text-foreground">CP101</a>
-                    <a href="/cm101" class="py-1 text-sm text-muted-foreground hover:text-foreground">CM101</a>
+                    <a href="/blog" class="py-1 text-sm text-muted-foreground hover:text-foreground" onclick={() => mobileMenuOpen = false}>Blog</a>
+                    <a href="/cp101" class="py-1 text-sm text-muted-foreground hover:text-foreground" onclick={() => mobileMenuOpen = false}>CP101</a>
+                    <a href="/cm101" class="py-1 text-sm text-muted-foreground hover:text-foreground" onclick={() => mobileMenuOpen = false}>CM101</a>
                 </div>
             </details>
 
@@ -262,7 +262,7 @@
                 </summary>
                 <div class="pl-4 flex flex-col gap-2 mt-1 border-l-2 border-gray-200 ml-1">
                     {#each events as item}
-                        <a href={item.href} class="py-1 text-sm text-muted-foreground hover:text-foreground">{item.title}</a>
+                        <a href={item.href} class="py-1 text-sm text-muted-foreground hover:text-foreground" onclick={() => mobileMenuOpen = false}>{item.title}</a>
                     {/each}
                 </div>
             </details>
@@ -274,7 +274,7 @@
                 </summary>
                 <div class="pl-4 flex flex-col gap-2 mt-1 border-l-2 border-gray-200 ml-1">
                     {#each about_us as item}
-                        <a href={item.href} class="py-1 text-sm text-muted-foreground hover:text-foreground">{item.title}</a>
+                        <a href={item.href} class="py-1 text-sm text-muted-foreground hover:text-foreground" onclick={() => mobileMenuOpen = false}>{item.title}</a>
                     {/each}
                 </div>
             </details>
