@@ -103,7 +103,7 @@
                         style="writing-mode: vertical-rl; transform: rotate(180deg);"
                 >
                     <p class="font-mono text-[12px] md:text-base tracking-widest opacity-20 text-black/75 uppercase">
-                        010111010110101011010101101010011111011
+                        0100001101001111010011010101000001010011
                     </p>
                 </div>
 
