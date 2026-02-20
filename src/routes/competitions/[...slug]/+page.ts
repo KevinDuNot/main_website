@@ -1,31 +1,54 @@
 import type { PageLoad } from './$types';
+import { redirect } from '@sveltejs/kit';
+
+export const prerender = false;
 
 export const load: PageLoad = async ({ params, fetch }) => {
-    const slug = params.slug;
+    const cleanSlug = params.slug.replace(/\/+$/, '');
 
-    // Check if the slug ends with /leaderboard
-    if (slug.endsWith('/leaderboard') || slug.endsWith('/leaderboard/')) {
-        const competitionPath = slug.replace(/\/leaderboard\/?$/, '');
-        const response = await fetch(`/competitions/${competitionPath}/leaderboard.html`);
+    // If its a pdf
+    if (cleanSlug.toLowerCase().endsWith('.pdf')) {
+        throw redirect(302, `/competitions-data/${cleanSlug}`);
+    }
+
+    // If its a leaderboard
+    if (cleanSlug.endsWith('/leaderboard')) {
+        const competitionPath = cleanSlug.replace(/\/leaderboard$/, '');
+        const targetUrl = `/competitions-data/${competitionPath}/leaderboard.html`;
+        const response = await fetch(targetUrl);
+
         if (response.ok) {
             const rawText = await response.text();
-            const stripped = rawText.replace(/^---[\s\S]*?---\n*/, '');
-            const titleMatch = rawText.match(/^---[\s\S]*?title:\s*"([^"]+)"[\s\S]*?---/);
+
+            if (rawText.trim().toLowerCase().startsWith('<!doctype html>')) {
+                return { slug: cleanSlug, type: 'html', html: null, title: cleanSlug };
+            }
+
+            const stripped = rawText.replace(/^\s*---[\s\S]*?---[\r\n]*/, '');
+            const titleMatch = rawText.match(/^\s*---[\s\S]*?title:\s*"([^"]+)"[\s\S]*?---/);
             const title = titleMatch ? titleMatch[1] : competitionPath;
-            return { slug, type: 'html', html: stripped, title };
+            return { slug: cleanSlug, type: 'html', html: stripped, title };
         }
-        return { slug, type: 'html', html: null, title: slug };
+        return { slug: cleanSlug, type: 'html', html: null, title: cleanSlug };
     }
 
     // Otherwise its the original markdown text
-    const response = await fetch(`/competitions/${slug}/_index.md`);
-    if (!response.ok) {
-        return { slug, type: 'markdown', markdown: null, title: slug };
-    }
-    const rawText = await response.text();
-    const stripped = rawText.replace(/^---[\s\S]*?---\n*/, '');
-    const titleMatch = rawText.match(/^---[\s\S]*?title:\s*"([^"]+)"[\s\S]*?---/);
-    const title = titleMatch ? titleMatch[1] : slug;
+    const targetUrl = `/competitions-data/${cleanSlug}/_index.md`;
+    const response = await fetch(targetUrl);
 
-    return { slug, type: 'markdown', markdown: stripped, title };
+    if (!response.ok) {
+        return { slug: cleanSlug, type: 'markdown', markdown: null, title: cleanSlug };
+    }
+
+    const rawText = await response.text();
+
+    if (rawText.trim().toLowerCase().startsWith('<!doctype html>')) {
+        return { slug: cleanSlug, type: 'markdown', markdown: null, title: cleanSlug };
+    }
+
+    const stripped = rawText.replace(/^\s*---[\s\S]*?---[\r\n]*/, '');
+    const titleMatch = rawText.match(/^\s*---[\s\S]*?title:\s*"([^"]+)"[\s\S]*?---/);
+    const title = titleMatch ? titleMatch[1] : cleanSlug;
+
+    return { slug: cleanSlug, type: 'markdown', markdown: stripped, title };
 };
