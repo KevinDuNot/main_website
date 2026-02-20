@@ -59,10 +59,8 @@
 
             // If no tags selected do the standard GET request
             // If tags selected then we do the GET request thing which filters based on tags
-            console.log("Testing")
             if (selectedTags.length === 0) {
                 response = await axios.get(`${API_BASE}/api/blog_items/shortened/`)
-                console.log("Default /api/blog_items/shortened/ request")
             } else {
                 response = await axios.get(`${API_BASE}/api/blog_items/filter_by_tags/`, {
                     params: {
@@ -72,12 +70,8 @@
                         indexes: null
                     }
                 });
-                console.log("Filtered by tags /api/blog_items/filter_by_tags/ request")
             }
-            console.log("Request done!")
             blogPosts = response.data
-            console.log("The data given back is")
-            console.log(blogPosts)
         } catch (err) {
             error = "Could not load the blog posts."
         } finally {
