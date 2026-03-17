@@ -12,7 +12,7 @@
     [slides](mathematics/2026/Proof%20by%20Contradiction%20Slides.pdf),
     [problems](mathematics/2026/Contradiction%20Worksheet%20Questions.pdf),
     [solutions](mathematics/2026/Contradiction%20Worksheet%20Solutions.pdf),
-    [annotations](Proof%20By%20Contradiction%20IPad%20Annotations.pdf),
+    [annotations](mathematics/2026/Proof%20By%20Contradiction%20IPad%20Annotations.pdf),
     [extra problems (drip marketing)](mathematics/2026/A%20Contradictory%20taste%20of%20Competitive%20Mathematics.pdf),
     [recording](https://www.youtube.com/watch?v=tk0kx9SmuUc)
 
