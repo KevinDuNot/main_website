@@ -11,6 +11,13 @@
     <title>UNSW CPMSoc</title>
     <link rel="icon" href={CPMSoc_Logo} />
 </svelte:head>
-<Navigation />
-{@render children()}
-<Footer />
+
+<div class="min-h-screen flex flex-col">
+    <Navigation />
+
+    <main class="flex-1">
+        {@render children()}
+    </main>
+
+    <Footer />
+</div>
