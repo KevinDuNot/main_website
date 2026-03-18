@@ -30,11 +30,11 @@
 
     <div class="flex flex-row justify-center px-10 gap-10">
         <p class="text-3xl leading-relaxed">
-            <a class="underline" href="https://advanced.unswcpmsoc.com">advanced</a>
+            <a class="underline" href="https://beginner.unswcpmsoc.com">beginner</a>
         </p>
 
         <p class="text-3xl leading-relaxed">
-            <a class="underline" href="https://beginner.unswcpmsoc.com">beginner</a>
+            <a class="underline" href="https://advanced.unswcpmsoc.com">advanced</a>
         </p>
     </div>
 
