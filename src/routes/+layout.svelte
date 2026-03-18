@@ -15,7 +15,7 @@
 <div class="min-h-screen flex flex-col">
     <Navigation />
 
-    <main class="flex-1">
+    <main class="flex-1 h-full">
         {@render children()}
     </main>
 
