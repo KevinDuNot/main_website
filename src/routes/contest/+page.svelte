@@ -10,7 +10,6 @@
       gap: 1rem;
 
       width: 100%;
-      outline: 2px solid red;
     }
 </style>
 <script>
