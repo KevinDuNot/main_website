@@ -1,11 +1,8 @@
 <style>
     .container {
-      position: relative;
-      top: 50%;
-      transform: translateY(100%);
-
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
+      padding-top: 10rem;
+      padding-bottom: 5rem;
 
       display: flex;
       flex-direction: column;
@@ -13,6 +10,7 @@
       gap: 1rem;
 
       width: 100%;
+      outline: 2px solid red;
     }
 </style>
 <script>
