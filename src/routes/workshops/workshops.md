@@ -1,7 +1,7 @@
 # Programming 2026
--   Term 1 Week 1 - Intro to Competitive Programming:
-    [slides](programming/2026/t1w1.pdf),
-    [problemset (pwd: cpmsoc)](https://vjudge.net/contest/790218)
+-   Term 1 Week 1 - Intro to Competitive Programming: [slides](programming/2026/t1w1.pdf), [problemset (pwd: `cpmsoc`)](https://vjudge.net/contest/790218)
+-   Term 1 Week 3 - Greedy and Friends: [slides](programming/2026/t1w3.pdf) [problemset (pwd: `cpmsoc`)](https://vjudge.net/contest/793877)
+-   Term 1 Week 5 - A Didactic Dissection of Data Structures: [slides](programming/2026/t1w5.pdf) [problemset (pwd: `cpmsoc`)](https://vjudge.net/contest/797040)
 
 # Mathematics 2026
 -   Term 1 Week 2 - Intro to Quant:
