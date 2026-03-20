@@ -16,8 +16,8 @@
     [extra problems (drip marketing)](mathematics/2026/A%20Contradictory%20taste%20of%20Competitive%20Mathematics.pdf),
     [recording](https://www.youtube.com/watch?v=tk0kx9SmuUc)
 -   Term 1 Week 5 - Combinatorics:
-    [slides](mathematics/2026/Proof%20by%20Contradiction%20Slides.pdf), 
-    [problems](mathematics/2026/Contradiction%20Worksheet%20Questions.pdf),
+    [slides](mathematics/2026/Combinatorics%20Slides.pdf), 
+    [problems](mathematics/2026/Combinatorics%20Worksheet.pdf),
     [solutions](mathematics/2026/Combinatorics%20Worksheet%20Solutions.pdf),
     [recording](https://www.youtube.com/live/57mdDLa-4H4)
 
