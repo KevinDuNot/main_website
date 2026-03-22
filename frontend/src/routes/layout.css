@@ -1,0 +1,175 @@
+@import '@fontsource/instrument-sans/400.css';
+@import '@fontsource/instrument-sans/500.css';
+@import '@fontsource/instrument-sans/600.css';
+@import '@fontsource/instrument-sans/700.css';
+@import '@fontsource/space-mono/400.css';
+@import '@fontsource/space-mono/700.css';
+
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+/* These are all from here: https://bits-ui.com/docs/components/navigation-menu */
+
+:root {
+    --background: hsl(0 0% 100%);
+    --foreground: hsl(0 0% 9%);
+
+    --muted: hsl(240 5% 96%);
+    --muted-foreground: hsla(0 0% 9% / 0.4);
+
+    --border: hsl(240 6% 10%);
+    --border-card: hsla(240 6% 10% / 0.1);
+    --border-input: hsla(240 6% 10% / 0.17);
+
+    --accent: hsl(204 94% 94%);
+    --accent-foreground: hsl(0, 0%, 0%);
+
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(0 0% 9%);
+
+    --shadow-mini: 0px 1px 0px 1px rgba(0, 0, 0, 0.04);
+    --shadow-popover: 0px 7px 12px 3px rgba(0, 0, 0, 0.1);
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-border: var(--border);
+    --color-border-card: var(--border-card);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --shadow-mini: var(--shadow-mini);
+    --shadow-popover: var(--shadow-popover);
+
+    --animate-scale-in: scale-in 0.2s ease;
+    --animate-scale-out: scale-out 0.15s ease;
+    --animate-enter-from-left: enter-from-left 0.2s ease;
+    --animate-enter-from-right: enter-from-right 0.2s ease;
+    --animate-exit-to-left: exit-to-left 0.2s ease;
+    --animate-exit-to-right: exit-to-right 0.2s ease;
+    --animate-fade-in: fade-in 0.2s ease;
+    --animate-fade-out: fade-out 0.15s ease;
+
+    @keyframes scale-in {
+        from { opacity: 0; transform: rotateX(-10deg) scale(0.9); }
+        to { opacity: 1; transform: rotateX(0deg) scale(1); }
+    }
+    @keyframes scale-out {
+        from { opacity: 1; transform: rotateX(0deg) scale(1); }
+        to { opacity: 0; transform: rotateX(-10deg) scale(0.95); }
+    }
+    @keyframes enter-from-right {
+        from { opacity: 0; transform: translateX(200px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes enter-from-left {
+        from { opacity: 0; transform: translateX(-200px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes exit-to-right {
+        from { opacity: 1; transform: translateX(0); }
+        to { opacity: 0; transform: translateX(200px); }
+    }
+    @keyframes exit-to-left {
+        from { opacity: 1; transform: translateX(0); }
+        to { opacity: 0; transform: translateX(-200px); }
+    }
+    @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes fade-out {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+}
+
+@layer base {
+    body {
+        font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+        background-color: var(--background);
+        color: var(--foreground);
+    }
+
+    *, ::after, ::before {
+        border-color: var(--border-card);
+    }
+}
+
+/* These are the custom fonts used in the project, mainly Instrument Sans and Space Mono */
+@layer utilities {
+    .font-mono {
+        font-family: 'Space Mono', ui-monospace, monospace;
+    }
+    .font-instrument-sans {
+        font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    }
+}
+
+/* Leaderboard formatting since I can't change the underlying HTML */
+.leaderboard-page .d-none {
+    display: none;
+}
+
+.leaderboard-page .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.leaderboard-page table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: normal;
+}
+
+.leaderboard-page th,
+.leaderboard-page td {
+    padding: 6px 6px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    vertical-align: bottom;
+}
+
+.leaderboard-page th {
+    font-weight: 600;
+}
+
+.leaderboard-page th a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.leaderboard-page h3 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #5b8ddb;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.leaderboard-page > div > button {
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    border: 1px solid #000000;
+    background: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.leaderboard-page > div > button:hover {
+    background: #f0f0f0;
+}
+
+.leaderboard-page p {
+    font-size: 1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}

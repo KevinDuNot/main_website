@@ -1,0 +1,6 @@
+Django==4.2.16
+django
+djangorestframework
+psycopg2-binary
+django-cors-headers
+whitenoise
