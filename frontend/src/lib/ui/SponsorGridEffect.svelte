@@ -2,6 +2,7 @@
     interface Sponsor {
         name: string;
         logo: string;
+        logo_css?: string;
         text_p1: string;
         href: string;
     }
@@ -27,13 +28,13 @@
                             rel="noopener noreferrer"
                             class="h-full hover:cursor-pointer hover:scale-102 duration-200"
                     >
-                        <img src={sponsor.logo} alt={sponsor.name} class="h-full object-contain object-left" />
+                        <img src={sponsor.logo} alt={sponsor.name} class={`h-full object-contain object-left ${sponsor.logo_css ?? ''}`} />
                     </a>
                 </div>
             {:else}
                 <div class="mb-0 h-24 flex items-center justify-center">
                     <div class="h-full hover:cursor-pointer hover:scale-102 duration-200">
-                        <img src={sponsor.logo} alt={sponsor.name} class="h-full object-contain object-left" />
+                        <img src={sponsor.logo} alt={sponsor.name} class={`h-full object-contain object-left ${sponsor.logo_css ?? ''}`} />
                     </div>
                 </div>
             {/if}

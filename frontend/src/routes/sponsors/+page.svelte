@@ -5,13 +5,16 @@
     import VivcourtLogo from '$lib/assets/sponsors/cropped_vivcourt_logo.png'
     import SusquehannaLogo from '$lib/assets/sponsors/sig_logo.png'
     import IMCLogo from '$lib/assets/sponsors/imc_logo.png'
-    import MakoLogo from '$lib/assets/sponsors/mako_logo.png'
-    import UNSWComputingLogo from '$lib/assets/sponsors/unsw_computing_logo.png'
+    import UNSWScienceLogo from '$lib/assets/sponsors/unsw_school_of_science_logo.png'
+    import UNSWCSELogo from '$lib/assets/sponsors/unsw_computer_science_and_engineering_logo.png'
     import UNSWMathematicsLogo from '$lib/assets/sponsors/unsw_maths_logo.png'
+    import FlowTradersLogo from '$lib/assets/sponsors/flow_traders_logo.png'
+    import HudsonRiverTradingLogo from '$lib/assets/sponsors/hudson_river_trading_logo.png'
+    import QubeLogo from '$lib/assets/sponsors/qube_logo.png'
 
     import SponsorGridEffect from "$lib/ui/SponsorGridEffect.svelte";
 
-    const majorSponsors = [
+    const principalSponsors = [
         {
             name: "Citadel Securities",
             logo: CitadelSecuritiesLogo,
@@ -23,6 +26,12 @@
             logo: JaneStreetLogo,
             text_p1: "<p>Jane Street is a quantitative trading firm with offices worldwide. We hire smart, humble people who love to solve problems, build systems, and test theories.</p><p>You'll learn something new every day in our office—whether it's connecting with a colleague to share perspectives, or participating in a talk, class, or game night. Our success is driven by our people and we never stop improving.</p>",
             href: "https://www.janestreet.com/"
+        },
+        {
+            name: "Hudson River Trading",
+            logo: HudsonRiverTradingLogo,
+            text_p1: "<p>Hudson River Trading (HRT) is a global quantitative trading firm that leverages cutting-edge technology, advanced research, and powerful computing to make markets more efficient. HRT brings together experts in mathematics, computer science, and engineering to design and optimize automated trading systems.</p><p>Collaboration is central to HRT’s culture—researchers, developers, and traders work closely to solve complex problems and continuously improve performance. The firm is committed to innovation, transparency, and building systems that operate at the forefront of modern financial markets.</p>",
+            href: "https://www.janestreet.com"
         },
     ]
 
@@ -52,23 +61,39 @@
             href: "https://www.imc.com/ap/"
         },
         {
-            name: "MAKO",
-            logo: MakoLogo,
-            text_p1: "<p>We make markets in exchange-traded fixed income, equities and commodities products, providing liquidity to major exchanges in Europe, APAC and the Americas. Our reputation is built upon our consistent provision of liquidity across all market cycles, especially periods of high market stress.</p><p>Now, a large percentage of our global workforce is dedicated to designing, building, optimizing and maintaining our latency sensitive proprietary trading systems. Our success in this journey is underpinned by our expertise developed over the last 20 years as well as our entrepreneurial and collaborative culture. We are proud of our history, however we firmly believe that our commitment to rapid innovation and support of intellectual curiosity means that our best days are ahead of us.</p>",
-            href: "https://www.mako.com/"
+            name: "Qube Research & Technologies",
+            logo: QubeLogo,
+            logo_css: "scale-175",
+            text_p1: "<p>Qube Research & Technologies (QRT) is a global quantitative investment firm focused on delivering high-quality returns through a scientific approach to financial markets. By combining data, research, and technology, QRT develops systematic trading strategies across a wide range of asset classes.</p><p>The firm fosters a collaborative and intellectually rigorous environment where researchers, engineers, and quants work together to solve complex problems. QRT places a strong emphasis on innovation, continuous learning, and applying cutting-edge techniques to stay at the forefront of quantitative finance.</p>",
+            href: "https://www.qube-rt.com/"
         },
     ]
 
     const affiliateSponsors = [
         {
-            name: "UNSW Computing",
-            logo: UNSWComputingLogo,
+            name: "Flow Traders",
+            logo: FlowTradersLogo,
+            text_p1: "<p>Flow Traders is a leading global financial technology-enabled liquidity provider, specialising in exchange-traded products (ETPs). Operating across multiple asset classes, Flow Traders uses advanced technology and data-driven strategies to provide continuous liquidity to financial markets worldwide.</p><p>With a strong focus on innovation and collaboration, Flow Traders brings together traders, developers, and researchers to improve market efficiency. The firm offers a dynamic environment where employees are empowered to take ownership, solve challenging problems, and make a tangible impact from day one.</p>",
+            href: "https://www.flowtraders.com/"
+        }
+    ]
+
+    const facultySponsors = [
+        {
+            name: "UNSW School of Science",
+            logo: UNSWScienceLogo,
             text_p1: "",
             href: ""
         },
         {
-            name: "UNSW Mathematics",
+            name: "UNSW School of Mathematics",
             logo: UNSWMathematicsLogo,
+            text_p1: "",
+            href: ""
+        },
+        {
+            name: "UNSW School of Computer Science & Engineering",
+            logo: UNSWCSELogo,
             text_p1: "",
             href: ""
         }
@@ -81,10 +106,10 @@
         Sponsors
     </h1>
     <h2 class="text-4xl font-bold text-[#5b8ddb] mb-3">
-        Major Sponsors
+        Principal Sponsors
     </h2>
 
-    <SponsorGridEffect sponsors={majorSponsors}/>
+    <SponsorGridEffect sponsors={principalSponsors}/>
 
     <h2 class="text-4xl font-bold text-[#5b8ddb] mt-15 mb-3">
         Minor Sponsors
@@ -97,4 +122,10 @@
     </h2>
 
     <SponsorGridEffect sponsors={affiliateSponsors}/>
+
+    <h2 class="text-4xl font-bold text-[#5b8ddb] mt-15 mb-3">
+        Faculty Sponsors
+    </h2>
+
+    <SponsorGridEffect sponsors={facultySponsors}/>
 </div>
