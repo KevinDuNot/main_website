@@ -27,7 +27,7 @@
 -   Term 1 Week 9 - Number Theory and Cryptography:
     [slides](mathematics/2026/Number%20Theory%20and%20Cryptography%20Slides.pdf),
     [problems](mathematics/2026/Number%20Theory%20Workshop%20Worksheet.pdf),
-    [solutions](workshops/mathematics/2026/Number%20Theory%20Workshop%20Worksheet%20Solution.pdf),
+    [solutions](mathematics/2026/Number%20Theory%20Workshop%20Worksheet%20Solution.pdf),
     [recording](https://www.youtube.com/live/Kmek0ZAz7jc)
 
 # Programming 2025
